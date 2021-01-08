@@ -1,0 +1,343 @@
+[
+  {
+    "template": "urn:homekit-spec:device:lightbulb:00000005:seed:lightbulb_n_s:1",
+    "matchSign": "[\"lightbulb-on_1\"]",
+    "category": "lightbulb",
+    "svg": "lightbulb",
+    "sp": [
+      {
+        "service": "lightbulb",
+        "property": [
+          {
+            "name": "on",
+            "operation": "power",
+            "click": "lightbulbOnPowerClick"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "template": "urn:homekit-spec:device:lightbulb:00000005:seed:lightbulb_b_s:1",
+    "matchSign": "[\"lightbulb-brightness_1\",\"lightbulb-on_1\"]",
+    "category": "lightbulb",
+    "svg": "lightbulb",
+    "sp": [
+      {
+        "service": "lightbulb",
+        "property": [
+          {
+            "name": "on",
+            "operation": "power",
+            "click": "lightbulbOnPowerClick"
+          },
+          {
+            "name": "brightness",
+            "operation": "brightness",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchSign": "[\"lightbulb-color-temperature_1\",\"lightbulb-on_1\"]",
+    "category": "lightbulb",
+    "svg": "lightbulb",
+    "sp": [
+      {
+        "service": "lightbulb",
+        "property": [
+          {
+            "name": "on",
+            "operation": "power",
+            "click": "lightbulbOnPowerClick"
+          },
+          {
+            "name": "color-temperature",
+            "operation": "color-temperature",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "template": "urn:homekit-spec:device:lightbulb:00000005:seed:lightbulb_c_s:1",
+    "matchSign": "[\"lightbulb-brightness_1\",\"lightbulb-color-temperature_1\",\"lightbulb-on_1\"]",
+    "category": "lightbulb",
+    "svg": "lightbulb",
+    "sp": [
+      {
+        "service": "lightbulb",
+        "property": [
+          {
+            "name": "on",
+            "operation": "power",
+            "click": "lightbulbOnPowerClick"
+          },
+          {
+            "name": "brightness",
+            "operation": "brightness",
+            "click": ""
+          },
+          {
+            "name": "color-temperature",
+            "operation": "color-temperature",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "template": "urn:homekit-spec:device:switch:00000008:seed:switch_four_s:1",
+    "matchSign": "[\"switch-on_4\"]",
+    "category": "switch",
+    "img": "0-0-0-0",
+    "sp": [
+      {
+        "service": "switch",
+        "property": [
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          },
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          },
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          },
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "template": "urn:homekit-spec:device:switch:00000008:seed:switch_three_s:1",
+    "matchSign": "[\"switch-on_3\"]",
+    "category": "switch",
+    "img": "0-0-0",
+    "sp": [
+      {
+        "service": "switch",
+        "property": [
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          },
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          },
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "template": "urn:homekit-spec:device:switch:00000008:seed:switch_two_s:1",
+    "matchSign": "[\"switch-on_2\"]",
+    "category": "switch",
+    "img": "0-0",
+    "sp": [
+      {
+        "service": "switch",
+        "property": [
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          },
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "template": "urn:homekit-spec:device:switch:00000008:seed:switch_one_s:1",
+    "matchSign": "[\"switch-on_1\"]",
+    "category": "switch",
+    "img": "0",
+    "sp": [
+      {
+        "service": "switch",
+        "property": [
+          {
+            "name": "on",
+            "operation": "power",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchSign": "[\"window-covering-current-position_1\",\"window-covering-position-state_1\",\"window-covering-target-position_1\"]",
+    "category": "windowCovering",
+    "sp": [
+      {
+        "service": "window-covering",
+        "property": [
+          {
+            "name": "current-position",
+            "operation": "",
+            "click": ""
+          },
+          {
+            "name": "position-state",
+            "operation": "",
+            "click": ""
+          },
+          {
+            "name": "target-position",
+            "operation": "",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchSign": "[\"settings-program-mode_1\",\"window-covering-current-position_1\",\"window-covering-position-state_1\",\"window-covering-target-position_1\"]",
+    "category": "windowCovering",
+    "sp": [
+      {
+        "service": "window-covering",
+        "property": [
+          {
+            "name": "current-position",
+            "operation": "",
+            "click": ""
+          },
+          {
+            "name": "position-state",
+            "operation": "",
+            "click": ""
+          },
+          {
+            "name": "target-position",
+            "operation": "",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchSign": "[\"settings-on_1\",\"settings-program-mode_1\",\"window-covering-current-position_1\",\"window-covering-position-state_1\",\"window-covering-target-position_1\"]",
+    "category": "windowCovering",
+    "sp": [
+      {
+        "service": "window-covering",
+        "property": [
+          {
+            "name": "current-position",
+            "operation": "",
+            "click": ""
+          },
+          {
+            "name": "position-state",
+            "operation": "",
+            "click": ""
+          },
+          {
+            "name": "target-position",
+            "operation": "",
+            "click": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "matchSign": "[\"battery-service-battery-level_1\",\"battery-service-charging-state_1\",\"battery-service-status-low-battery_1\",\"contact-sensor-contact-state_1\",\"contact-sensor-status-fault_1\"]",
+    "category": "sensor",
+    "sensors": [{
+      "name": "contact-sensor",
+      "detect": "contact-state",
+      "type": "binaryRange",
+      "0": "接触",
+      "1": "未接触",
+      "unit": ""
+    }]
+  },
+  {
+    "matchSign": "[\"battery-service-battery-level_1\",\"battery-service-charging-state_1\",\"battery-service-status-low-battery_1\",\"humidity-sensor-current-relative-humidity_1\",\"humidity-sensor-status-fault_1\",\"temperature-sensor-current-temperature_1\",\"temperature-sensor-status-fault_1\"]",
+    "category": "sensor",
+    "sensors": [
+      {
+        "name": "humidity-sensor",
+        "detect": "current-relative-humidity",
+        "type": "range",
+        "unit": "%"
+      },
+      {
+        "name": "temperature-sensor",
+        "detect": "current-temperature",
+        "type": "range",
+        "unit": "℃"
+      }
+    ]
+  },
+  {
+    "matchSign": "[\"battery-service-battery-level_1\",\"battery-service-charging-state_1\",\"battery-service-status-low-battery_1\",\"smoke-sensor-smoke-detected_1\",\"smoke-sensor-status-fault_1\"]",
+    "category": "sensor",
+    "sensors": [{
+      "name": "smoke-sensor",
+      "detect": "smoke-detected",
+      "type": "binaryRange",
+      "0": "无烟响应",
+      "1": "烟雾响应",
+      "unit": ""
+    }]
+  },
+  {
+    "matchSign": "[\"battery-service-battery-level_1\",\"battery-service-charging-state_1\",\"battery-service-status-low-battery_1\",\"leak-sensor-leak-detected_1\",\"leak-sensor-status-fault_1\"]",
+    "category": "sensor",
+    "sensors": [{
+      "name": "leak-sensor",
+      "detect": "leak-detected",
+      "type": "binaryRange",
+      "0": "无泄漏",
+      "1": "泄露警报",
+      "unit": ""
+    }]
+  },
+  {
+    "matchSign": "[\"battery-service-battery-level_1\",\"battery-service-charging-state_1\",\"battery-service-status-low-battery_1\",\"motion-sensor-motion-detected_1\",\"motion-sensor-status-fault_1\"]",
+    "category": "sensor",
+    "sensors": [{
+      "name": "motion-sensor",
+      "detect": "motion-detected",
+      "type": "boolean",
+      "0": "false",
+      "1": "true",
+      "unit": ""
+    }]
+  },
+  {
+    "matchSign": "gateway",
+    "category": "gateway"
+  }
+]

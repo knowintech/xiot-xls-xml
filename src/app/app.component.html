@@ -3,7 +3,7 @@
     <nz-header>Knowin Smart Web Tool！</nz-header>
     <nz-content>
       <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload" [nzAccept]="['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']">
-        <button nz-button><i nz-icon nzType="upload"></i>Select File(xls/xlsx)</button>
+        <button nz-button><i nz-icon nzType="upload"></i>选择文件(xls/xlsx)</button>
         <button
           nz-button
           [nzType]="'primary'"
@@ -11,7 +11,7 @@
           [disabled]="fileList.length == 0"
           style="margin-left: 20px;"
         >
-          downloadAsXlsxForSale
+          销售向导出xlsx
         </button>
         <button
           nz-button
@@ -20,7 +20,7 @@
           [disabled]="fileList.length == 0"
           style="margin-left: 20px;"
         >
-          downloadAsXlsxForTech
+          技术向导出xlsx
         </button>
         <button
           nz-button
@@ -29,7 +29,7 @@
           [disabled]="fileList.length == 0"
           style="margin-left: 20px;"
         >
-          downloadAsXml
+          导出xml
         </button>
       </nz-upload>
       
@@ -57,16 +57,26 @@
             <td>{{ data['计数'] }}</td>
             <td>{{ data['名称'] }}</td>
             <td>
-              <div class="editable-cell" [hidden]="editIndex === idx" (click)="startEdit(idx)">
-                {{ data['ID'] }}
-              </div>
-              <input [hidden]="editIndex !== idx || data['类别'] != DEVICETYPE.SMART" type="text" nz-input [(ngModel)]="data['ID']" (blur)="stopEdit()" />
+              <ng-container *ngIf="data['类别'] != DEVICETYPE.SMART; else elseIDTemplate">
+                /
+              </ng-container>
+              <ng-template #elseIDTemplate>
+                <div class="editable-cell" [hidden]="editIndex === idx" (click)="startEdit(idx)">
+                  {{ data['ID'] }}
+                </div>
+                <input [hidden]="editIndex !== idx " type="text" nz-input [(ngModel)]="data['ID']" (blur)="stopEdit()" />
+              </ng-template>
             </td>
             <td>
-              <div class="editable-cell" [hidden]="editIndex === idx" (click)="startEdit(idx)">
-                {{ data['SN'] }}
-              </div>
-              <input [hidden]="editIndex !== idx || data['类别'] != DEVICETYPE.SMART" type="text" nz-input [(ngModel)]="data['SN']" (blur)="stopEdit()" />
+              <ng-container *ngIf="data['类别'] != DEVICETYPE.SMART; else elseSNTemplate">
+                /
+              </ng-container>
+              <ng-template #elseSNTemplate>
+                <div class="editable-cell" [hidden]="editIndex === idx" (click)="startEdit(idx)">
+                  {{ data['SN'] }}
+                </div>
+                <input [hidden]="editIndex !== idx" type="text" nz-input [(ngModel)]="data['SN']" (blur)="stopEdit()" />
+              </ng-template>
             </td>
             <td>{{ data['类别'] }}</td>
             <td>{{ data['产品描述'] }}</td>
