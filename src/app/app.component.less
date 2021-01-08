@@ -1,0 +1,56 @@
+#app {
+  font-family: 'Noto Sans SC', 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* width: '1920px'; */
+  height: 100%;
+  min-width: 1260px;
+  text-align: center;
+  /* overflow-y: scroll; */
+  position: relative;
+  color: #2c3e50;
+  background-color: rgba(245, 245, 245, 1);
+  margin-top: 0px;
+  :host {
+    text-align: center;
+  }
+  nz-header,
+  nz-footer {
+    background: #374051;
+    color: #fff;
+  }
+
+  nz-footer {
+    line-height: 1.5;
+  }
+
+  nz-content {
+    background: whitesmoke;
+    color: lightblue;
+    min-height: 120px;
+    height: 100%;
+    line-height: 120px;
+
+    .editable-cell {
+      position: relative;
+      padding: 5px 12px;
+      cursor: pointer;
+    }
+
+    .editable-row:hover .editable-cell {
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      padding: 4px 11px;
+    }
+  }
+
+  nz-layout {
+    margin-bottom: 48px;
+  }
+
+  nz-layout:last-child {
+    margin: 0;
+  }
+}
+
+

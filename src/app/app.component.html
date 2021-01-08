@@ -1,0 +1,88 @@
+<div id="app">
+  <nz-layout style="min-height: 100%;">
+    <nz-header>Knowin Smart Web Tool！</nz-header>
+    <nz-content>
+      <nz-upload [(nzFileList)]="fileList" [nzBeforeUpload]="beforeUpload" [nzAccept]="['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']">
+        <button nz-button><i nz-icon nzType="upload"></i>Select File(xls/xlsx)</button>
+        <button
+          nz-button
+          [nzType]="'primary'"
+          (click)="saveToSheet('sale');$event.stopPropagation();"
+          [disabled]="fileList.length == 0"
+          style="margin-left: 20px;"
+        >
+          downloadAsXlsxForSale
+        </button>
+        <button
+          nz-button
+          [nzType]="'primary'"
+          (click)="saveToSheet('tech');$event.stopPropagation();"
+          [disabled]="fileList.length == 0"
+          style="margin-left: 20px;"
+        >
+          downloadAsXlsxForTech
+        </button>
+        <button
+          nz-button
+          [nzType]="'primary'"
+          (click)="saveToXml();$event.stopPropagation();"
+          [disabled]="fileList.length == 0"
+          style="margin-left: 20px;"
+        >
+          downloadAsXml
+        </button>
+      </nz-upload>
+      
+      <nz-table #editRowTable nzBordered [nzData]="listOfData" style="margin-top: 20px;padding: 20px;">
+        <thead>
+          <tr>
+            <th>计数</th>
+            <th>名称</th>
+            <th nzWidth="20%">ID</th>
+            <th nzWidth="20%">SN</th>
+            <th>类别</th>
+            <th>产品描述</th>
+            <th>单价</th>
+            <th>单位</th>
+            <th>规格</th>
+            <th>内序号</th>
+            <th>区域名称</th>
+            <th>位置码</th>
+            <th>型号</th>
+            <th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of editRowTable.data; let idx = index" class="editable-row">
+            <td>{{ data['计数'] }}</td>
+            <td>{{ data['名称'] }}</td>
+            <td>
+              <div class="editable-cell" [hidden]="editIndex === idx" (click)="startEdit(idx)">
+                {{ data['ID'] }}
+              </div>
+              <input [hidden]="editIndex !== idx || data['类别'] != DEVICETYPE.SMART" type="text" nz-input [(ngModel)]="data['ID']" (blur)="stopEdit()" />
+            </td>
+            <td>
+              <div class="editable-cell" [hidden]="editIndex === idx" (click)="startEdit(idx)">
+                {{ data['SN'] }}
+              </div>
+              <input [hidden]="editIndex !== idx || data['类别'] != DEVICETYPE.SMART" type="text" nz-input [(ngModel)]="data['SN']" (blur)="stopEdit()" />
+            </td>
+            <td>{{ data['类别'] }}</td>
+            <td>{{ data['产品描述'] }}</td>
+            <td>{{ data['单价'] }}</td>
+            <td>{{ data['单位'] }}</td>
+            <td>{{ data['规格'] }}</td>
+            <td>{{ data['内序号'] }}</td>
+            <td>{{ data['区域名称'] }}</td>
+            <td>{{ data['位置码'] }}</td>
+            <td>{{ data['型号'] }}</td>
+            <td>{{ data['备注'] }}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </nz-content>
+    <nz-footer>designed by angular</nz-footer>
+  </nz-layout>
+</div>
+
